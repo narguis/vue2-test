@@ -256,6 +256,7 @@ export default {
     #00ffa3 2.44%,
     rgba(0, 194, 255, 0.17) 100%
   );
+  flex-shrink: 0;
 }
 
 .initials-square::after {
@@ -280,6 +281,7 @@ export default {
   gap: 16px;
   align-items: center;
   width: 455px;
+  min-width: 0;
 }
 
 .customer-full-name {
@@ -332,10 +334,19 @@ export default {
   padding: 0px 10px;
   text-align: center;
   flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .customer-list {
   overflow: auto;
   scrollbar-width: none;
+}
+
+.customer-info,
+.location-info {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 </style>
