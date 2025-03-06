@@ -109,10 +109,26 @@
 
       <template v-else-if="screen === 'startReturn'">
         <div class="start-return-content">
-          <p>
-            Returning item {{ selectedCustomer.datasource_id }}, to
-            {{ selectedCustomer.name }} on {{ selectedCustomerCity }}
-          </p>
+          <div>Returning item</div>
+          <img class="giftbox" src="/images/giftbox.svg" alt="" />
+          <div class="selected-customer-id">
+            {{ selectedCustomer.datasource_id }}
+          </div>
+          <div class="selected-customer-info">
+            <div>
+              {{
+                `${selectedCustomer.name.split(" ")[0]} ${
+                  selectedCustomer.name_2.split(" ")[0]
+                },`
+              }}
+            </div>
+            <div v-if="selectedCustomer.shipping_addresses.length > 0">
+              {{ selectedCustomer.shipping_addresses[0]?.city }}
+            </div>
+            <div v-if="selectedCustomer.shipping_addresses.length == 0">
+              {{ selectedCustomer.store_locations[0]?.city }}
+            </div>
+          </div>
           <button class="ok-button" @click="returnItems">OK</button>
         </div>
       </template>
@@ -140,21 +156,6 @@ export default {
     },
     queriedCustomers() {
       return this.$store.getters.queriedCustomers(this.searchQuery);
-    },
-    selectedCustomerCity() {
-      if (!this.selectedCustomer) return "";
-      if (
-        this.selectedCustomer.shipping_addresses &&
-        this.selectedCustomer.shipping_addresses.length > 0
-      ) {
-        return this.selectedCustomer.shipping_addresses[0].city;
-      } else if (
-        this.selectedCustomer.store_locations &&
-        this.selectedCustomer.store_locations.length > 0
-      ) {
-        return this.selectedCustomer.store_locations[0].city;
-      }
-      return "";
     },
   },
 
@@ -458,6 +459,7 @@ export default {
 }
 
 .return-items-button:hover {
+  filter: brightness(90%);
   transform: scale(1.05);
 }
 
@@ -494,8 +496,53 @@ export default {
   height: calc(100vh - 64px);
   max-width: 95%;
   display: flex;
+  flex-direction: column;
+  font-weight: 500;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
+
+.selected-customer-info {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.ok-button {
+  margin-top: 0.5rem;
+  color: #2a46ff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f3f2f2;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.ok-button:hover {
+  filter: brightness(90%);
+  transform: scale(1.05);
+}
+
+.selected-customer-id {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: #f3f2f2;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.giftbox {
+  max-width: 10rem;
 }
 
 @media (max-width: 540px) {
@@ -514,6 +561,10 @@ export default {
 
   .modal-header {
     display: none;
+  }
+
+  .selected-customer-info {
+    flex-direction: column;
   }
 }
 </style>
