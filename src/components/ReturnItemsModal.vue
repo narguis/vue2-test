@@ -42,7 +42,7 @@
             <div class="customer-info">
               <div class="customer-id-parent">
                 <div class="customer-id">
-                  {{ datasource_id }}
+                  {{ customer.datasource_id }}
                 </div>
                 <div class="parent-full-name">
                   <div class="parent-name">
