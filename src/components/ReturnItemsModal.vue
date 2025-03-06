@@ -16,6 +16,21 @@
         </div>
       </div>
 
+      <div class="mobile-header">
+        <div class="mobile-header-top">
+          <div class="back-button">
+            <img src="/images/left-arrow.png" alt="" />
+          </div>
+          <div class="close-button">
+            <img src="/images/close.png" alt="" />
+          </div>
+        </div>
+        <div class="mobile-header-title">
+          <h5 class="header-title-return">Return Items</h5>
+          <h3 class="header-title-select">Select customer</h3>
+        </div>
+      </div>
+
       <div class="search-bar">
         <input
           type="text"
@@ -157,7 +172,28 @@ export default {
   padding: 16px;
 }
 
+.mobile-header {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+.mobile-header-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+}
+
+.mobile-header-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .back-button {
+  flex-shrink: 0;
   border: 1px solid #f3f2f2;
   width: 40px;
   height: 40px;
@@ -201,6 +237,7 @@ export default {
   justify-content: center;
   align-items: center;
   border-radius: 24px;
+  flex-shrink: 0;
 }
 
 .results-count {
@@ -217,6 +254,7 @@ export default {
 }
 
 .search-input {
+  min-width: 0;
   width: 304px;
   height: 40px;
   background-color: #f3f2f2;
@@ -229,6 +267,7 @@ export default {
   background-repeat: no-repeat;
   background-position: 10px center;
   background-size: 20px auto;
+  padding-right: 10px;
   padding-left: 40px;
 }
 
@@ -319,6 +358,7 @@ export default {
   align-items: center;
   font-size: 14px;
   font-weight: 500;
+  margin-left: 10px;
 }
 
 .start-return-button {
@@ -335,6 +375,7 @@ export default {
   text-align: center;
   flex-wrap: nowrap;
   flex-shrink: 0;
+  margin-left: 10px;
 }
 
 .customer-list {
@@ -348,5 +389,24 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+}
+
+@media (max-width: 540px) {
+  .search-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 16px 16px 16px;
+  }
+  .search-input {
+    width: 80%;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .modal-header {
+    display: none;
+  }
 }
 </style>
