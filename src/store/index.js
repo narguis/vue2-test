@@ -13,7 +13,9 @@ export default new Vuex.Store({
       if (!searchQuery) return state.customers;
 
       return state.customers.filter((customer) => {
-        const fullName = `${customer.name} ${customer.name_2}`;
+        const fullName = `${customer.name.split(" ")[0]} ${
+          customer.name_2.split(" ")[0]
+        }`;
         return (
           customer.datasource_id
             .toLowerCase()
