@@ -196,17 +196,17 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 2rem;
   box-sizing: border-box;
 }
 
 .modal-container {
   background: #ffffff;
-  width: 768px;
+  width: 48rem;
   max-width: 95%;
   display: flex;
   flex-direction: column;
-  border-radius: 24px;
+  border-radius: 1.5rem;
   max-height: calc(100vh - 64px);
   overflow: hidden;
 }
@@ -215,21 +215,21 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 1rem;
 }
 
 .mobile-header {
   display: none;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
+  padding: 1rem;
 }
 
 .mobile-header-title {
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .mobile-header-top {
@@ -241,9 +241,9 @@ export default {
 .back-button {
   flex-shrink: 0;
   border: 1px solid #f3f2f2;
-  width: 40px;
-  height: 40px;
-  border-radius: 24px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -258,7 +258,7 @@ export default {
 .header-title {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
   text-align: left;
 }
 
@@ -268,27 +268,27 @@ export default {
 }
 
 .header-title-return {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
 .header-title-select {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .header-left {
   display: flex;
-  gap: 18px;
+  gap: 1.125rem;
 }
 
 .close-button {
   background-color: #f3f2f2;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 24px;
+  border-radius: 1.5rem;
   flex-shrink: 0;
   cursor: pointer;
   transition: 0.3s ease;
@@ -300,12 +300,12 @@ export default {
 
 .results-count {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .search-bar {
   display: flex;
-  padding: 16px;
+  padding: 1rem;
   justify-content: space-between;
   border-bottom: 1px solid #e4e4e5;
   align-items: center;
@@ -313,39 +313,39 @@ export default {
 
 .search-input {
   min-width: 0;
-  width: 304px;
-  height: 40px;
+  width: 19rem;
+  height: 2.5rem;
   background-color: #f3f2f2;
   border: none;
-  border-radius: 24px;
+  border-radius: 1.5rem;
   color: #62717e;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
   background-image: url("../../public/images/search.png");
   background-repeat: no-repeat;
-  background-position: 10px center;
-  background-size: 20px auto;
-  padding-right: 10px;
-  padding-left: 40px;
+  background-position: 0.625rem center;
+  background-size: 1.25rem auto;
+  padding-right: 0.625rem;
+  padding-left: 2.5rem;
 }
 
 .customer-row {
   display: flex;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   justify-content: space-between;
   border-top: 1px solid #f3f2f2;
 }
 
 .initials-square {
   position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-  font-size: 16px;
+  font-size: 1rem;
   color: #ffffff;
   font-weight: 700;
   background: linear-gradient(
@@ -359,9 +359,9 @@ export default {
 .initials-square::after {
   content: "";
   position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 24px;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 1.5rem;
   background-color: #2dc579;
   background-image: url("../../public/images/checkmark.png");
   background-repeat: no-repeat;
@@ -375,65 +375,65 @@ export default {
 
 .row-leftside {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   align-items: center;
-  width: 455px;
+  width: 28.438rem;
   min-width: 0;
 }
 
 .customer-full-name {
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .customer-id-parent {
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
 }
 
 .parent-full-name {
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .customer-id {
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 10px;
+  font-size: 0.625rem;
   background-color: #f3f2f2;
-  border-radius: 24px;
-  padding: 0px 8px;
+  border-radius: 1.5rem;
+  padding: 0rem 0.5rem;
 }
 
 .location-info {
   display: flex;
-  width: 164px;
+  width: 10.25rem;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
-  margin-left: 10px;
+  margin-left: 0.625rem;
 }
 
 .start-return-button {
   background-color: #f3f2f2;
-  border-radius: 24px;
+  border-radius: 1.5rem;
   border: none;
   color: #2a46ff;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 0px 10px;
+  gap: 0.25rem;
+  padding: 0rem 0.625rem;
   text-align: center;
   flex-wrap: nowrap;
   flex-shrink: 0;
-  margin-left: 10px;
+  margin-left: 0.625rem;
   cursor: pointer;
 }
 
@@ -443,11 +443,11 @@ export default {
 
 .return-items-button {
   color: #2a46ff;
-  padding: 10px 16px;
-  border-radius: 10px;
+  padding: 0.625rem 1rem;
+  border-radius: 0.625rem;
   border: none;
   background-color: #f3f2f2;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -511,11 +511,11 @@ export default {
 .ok-button {
   margin-top: 0.5rem;
   color: #2a46ff;
-  padding: 10px 16px;
-  border-radius: 10px;
+  padding: 0.625rem 1rem;
+  border-radius: 0.625rem;
   border: none;
   background-color: #f3f2f2;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -535,10 +535,10 @@ export default {
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1.25rem;
   background-color: #f3f2f2;
-  border-radius: 8px;
-  padding: 8px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
 
 .giftbox {
@@ -548,8 +548,8 @@ export default {
 @media (max-width: 540px) {
   .search-bar {
     flex-direction: column;
-    gap: 10px;
-    padding: 0px 16px 16px 16px;
+    gap: 0.625rem;
+    padding: 0px 1rem 1rem 1rem;
   }
   .search-input {
     width: 80%;
