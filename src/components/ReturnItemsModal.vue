@@ -163,6 +163,7 @@ export default {
   flex-direction: column;
   border-radius: 24px;
   max-height: calc(100vh - 64px);
+  overflow: hidden;
 }
 
 .modal-header {
