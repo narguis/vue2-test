@@ -27,7 +27,7 @@
 
       <div class="customer-list">
         <div class="customer-row">
-          <div class="customer-details">
+          <div class="row-leftside">
             <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
 
             <div class="customer-info">
@@ -51,8 +51,10 @@
           <div class="location-info">
             <div class="customer-city">{{ city }}</div>
           </div>
-
-          <button class="start-return-btn">Start return</button>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
         </div>
       </div>
     </div>
@@ -196,6 +198,7 @@ export default {
   display: flex;
   padding: 12px 16px;
   justify-content: space-between;
+  border-top: 1px solid #f3f2f2;
 }
 
 .initials-square {
@@ -234,10 +237,11 @@ export default {
   border: 1px solid #ffffff;
 }
 
-.customer-details {
+.row-leftside {
   display: flex;
   gap: 16px;
   align-items: center;
+  width: 455px;
 }
 
 .customer-full-name {
@@ -267,5 +271,28 @@ export default {
   background-color: #f3f2f2;
   border-radius: 24px;
   padding: 0px 8px;
+}
+
+.location-info {
+  display: flex;
+  width: 174px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.start-return-button {
+  background-color: #f3f2f2;
+  border-radius: 24px;
+  border: none;
+  color: #2a46ff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0px 10px;
+  text-align: center;
+  flex-wrap: nowrap;
 }
 </style>
