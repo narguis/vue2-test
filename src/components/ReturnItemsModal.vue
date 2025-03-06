@@ -44,13 +44,13 @@
                 <div class="customer-id">
                   {{ customer.datasource_id }}
                 </div>
-                <div class="parent-full-name">
+                <div class="parent-full-name" v-if="customer.parent">
                   <div class="parent-name">
-                    {{ customer.parent?.name.split(" ")[0] }}
+                    {{ customer.parent.name.split(" ")[0] }}
                   </div>
-                  <div class="dot">•</div>
+                  <div class="dot" v-if="customer.parent.name_2">•</div>
                   <div class="parent-surname">
-                    {{ customer.parent?.name_2.split(" ")[0] }}
+                    {{ customer.parent.name_2.split(" ")[0] }}
                   </div>
                 </div>
               </div>
@@ -58,7 +58,7 @@
                 <div class="customer-name">
                   {{ customer.name.split(" ")[0] }}
                 </div>
-                <div class="dot">•</div>
+                <div class="dot" v-if="customer.name_2">•</div>
                 <div class="customer-surname">
                   {{ customer.name_2.split(" ")[0] }}
                 </div>
@@ -67,7 +67,12 @@
           </div>
           <div class="location-info">
             <div class="customer-city">
-              {{ customer.store_locations[0]?.city }}
+              <div v-if="customer.shipping_addresses.length > 0">
+                {{ customer.shipping_addresses[0]?.city }}
+              </div>
+              <div v-if="customer.shipping_addresses.length == 0">
+                {{ customer.store_locations[0]?.city }}
+              </div>
             </div>
           </div>
           <button class="start-return-button">
