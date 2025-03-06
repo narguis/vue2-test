@@ -27,10 +27,26 @@
 
       <div class="customer-list">
         <div class="customer-row">
-          <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+          <div class="customer-details">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
 
-          <div class="customer-info">
-            <div class="customer-name">{{ name }}</div>
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
           </div>
           <div class="location-info">
             <div class="customer-city">{{ city }}</div>
@@ -216,5 +232,40 @@ export default {
   background-size: calc(100% - 4px);
   padding: 1px;
   border: 1px solid #ffffff;
+}
+
+.customer-details {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.customer-full-name {
+  display: flex;
+  gap: 4px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.customer-id-parent {
+  display: flex;
+  gap: 4px;
+}
+
+.parent-full-name {
+  display: flex;
+  gap: 4px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.customer-id {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 10px;
+  background-color: #f3f2f2;
+  border-radius: 24px;
+  padding: 0px 8px;
 }
 </style>
