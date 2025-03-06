@@ -56,6 +56,366 @@
             <img src="/images/right-arrow.png" alt="" />
           </button>
         </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
+        <div class="customer-row">
+          <div class="row-leftside">
+            <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
+
+            <div class="customer-info">
+              <div class="customer-id-parent">
+                <div class="customer-id">
+                  {{ datasource_id }}
+                </div>
+                <div class="parent-full-name">
+                  <div class="parent-name">{{ parent_name }}</div>
+                  <div class="dot">•</div>
+                  <div class="parent-surname">{{ parent_name_2 }}</div>
+                </div>
+              </div>
+              <div class="customer-full-name">
+                <div class="customer-name">{{ name }}</div>
+                <div class="dot">•</div>
+                <div class="customer-surname">{{ name_2 }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
+          </div>
+          <button class="start-return-button">
+            Start return
+            <img src="/images/right-arrow.png" alt="" />
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -110,6 +470,7 @@ export default {
   display: flex;
   flex-direction: column;
   border-radius: 24px;
+  max-height: calc(100vh - 64px);
 }
 
 .modal-header {
@@ -275,7 +636,7 @@ export default {
 
 .location-info {
   display: flex;
-  width: 174px;
+  width: 164px;
   align-items: center;
   font-size: 14px;
   font-weight: 500;
@@ -294,5 +655,10 @@ export default {
   padding: 0px 10px;
   text-align: center;
   flex-wrap: nowrap;
+}
+
+.customer-list {
+  overflow: auto;
+  scrollbar-width: none;
 }
 </style>
