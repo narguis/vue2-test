@@ -1,102 +1,125 @@
 <template>
-  <div class="modal-backdrop">
+  <div v-if="showModal" class="modal-backdrop">
     <div class="modal-container">
-      <div class="modal-header">
-        <div class="header-left">
-          <div class="back-button">
-            <img src="/images/left-arrow.png" alt="" />
+      <template v-if="screen === 'returnItems'">
+        <div class="modal-header">
+          <div class="header-left">
+            <div class="back-button" @click="handleBack">
+              <img src="/images/left-arrow.png" alt="" />
+            </div>
+            <div class="header-title">
+              <h5 class="header-title-return">Return Items</h5>
+              <h3 class="header-title-select">Select customer</h3>
+            </div>
           </div>
-          <div class="header-title">
+          <div class="close-button" @click="closeModal">
+            <img src="/images/close.png" alt="" />
+          </div>
+        </div>
+
+        <div class="mobile-header">
+          <div class="mobile-header-top">
+            <div class="back-button" @click="handleBack">
+              <img src="/images/left-arrow.png" alt="" />
+            </div>
+            <div class="close-button" @click="closeModal">
+              <img src="/images/close.png" alt="" />
+            </div>
+          </div>
+          <div class="mobile-header-title">
             <h5 class="header-title-return">Return Items</h5>
             <h3 class="header-title-select">Select customer</h3>
           </div>
         </div>
-        <div class="close-button">
-          <img src="/images/close.png" alt="" />
-        </div>
-      </div>
 
-      <div class="mobile-header">
-        <div class="mobile-header-top">
-          <div class="back-button">
-            <img src="/images/left-arrow.png" alt="" />
-          </div>
-          <div class="close-button">
-            <img src="/images/close.png" alt="" />
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Search for ID or name"
+            class="search-input"
+            v-model="searchQuery"
+          />
+          <div class="results-count">
+            {{ queriedCustomers.length }} of {{ totalCustomers }}
           </div>
         </div>
-        <div class="mobile-header-title">
-          <h5 class="header-title-return">Return Items</h5>
-          <h3 class="header-title-select">Select customer</h3>
-        </div>
-      </div>
 
-      <div class="search-bar">
-        <input
-          type="text"
-          placeholder="Search for ID or name"
-          class="search-input"
-          v-model="searchQuery"
-        />
-        <div class="results-count">
-          {{ queriedCustomers.length }} of {{ totalCustomers }}
-        </div>
-      </div>
+        <div class="customer-list">
+          <div
+            v-for="customer in queriedCustomers"
+            :key="customer.datasource_id"
+            class="customer-row"
+          >
+            <div class="row-leftside">
+              <div class="initials-square">
+                {{ customer.name[0] }}{{ customer.name_2[0] }}
+              </div>
 
-      <div class="customer-list">
-        <div
-          v-for="customer in queriedCustomers"
-          :key="customer.datasource_id"
-          class="customer-row"
-        >
-          <div class="row-leftside">
-            <div class="initials-square">
-              {{ customer.name[0] }}{{ customer.name_2[0] }}
-            </div>
-
-            <div class="customer-info">
-              <div class="customer-id-parent">
-                <div class="customer-id">
-                  {{ customer.datasource_id }}
-                </div>
-                <div class="parent-full-name" v-if="customer.parent">
-                  <div class="parent-name">
-                    {{ customer.parent.name.split(" ")[0] }}
+              <div class="customer-info">
+                <div class="customer-id-parent">
+                  <div class="customer-id">
+                    {{ customer.datasource_id }}
                   </div>
-                  <div class="dot" v-if="customer.parent.name_2">•</div>
-                  <div class="parent-surname">
-                    {{ customer.parent.name_2.split(" ")[0] }}
+                  <div class="parent-full-name" v-if="customer.parent">
+                    <div class="parent-name">
+                      {{ customer.parent.name.split(" ")[0] }}
+                    </div>
+                    <div class="dot" v-if="customer.parent.name_2">•</div>
+                    <div class="parent-surname">
+                      {{ customer.parent.name_2.split(" ")[0] }}
+                    </div>
+                  </div>
+                </div>
+                <div class="customer-full-name">
+                  <div class="customer-name">
+                    {{ customer.name.split(" ")[0] }}
+                  </div>
+                  <div class="dot" v-if="customer.name_2">•</div>
+                  <div class="customer-surname">
+                    {{ customer.name_2.split(" ")[0] }}
                   </div>
                 </div>
               </div>
-              <div class="customer-full-name">
-                <div class="customer-name">
-                  {{ customer.name.split(" ")[0] }}
+            </div>
+            <div class="location-info">
+              <div class="customer-city">
+                <div v-if="customer.shipping_addresses.length > 0">
+                  {{ customer.shipping_addresses[0]?.city }}
                 </div>
-                <div class="dot" v-if="customer.name_2">•</div>
-                <div class="customer-surname">
-                  {{ customer.name_2.split(" ")[0] }}
+                <div v-if="customer.shipping_addresses.length == 0">
+                  {{ customer.store_locations[0]?.city }}
                 </div>
               </div>
             </div>
+            <button class="start-return-button" @click="startReturn(customer)">
+              Start return
+              <img src="/images/right-arrow.png" alt="" />
+            </button>
           </div>
-          <div class="location-info">
-            <div class="customer-city">
-              <div v-if="customer.shipping_addresses.length > 0">
-                {{ customer.shipping_addresses[0]?.city }}
-              </div>
-              <div v-if="customer.shipping_addresses.length == 0">
-                {{ customer.store_locations[0]?.city }}
-              </div>
-            </div>
-          </div>
-          <button class="start-return-button">
-            Start return
-            <img src="/images/right-arrow.png" alt="" />
+        </div>
+      </template>
+
+      <template v-else-if="screen === 'backModal'">
+        <div class="back-content">
+          <button class="return-items-button" @click="returnItems">
+            Return Items
           </button>
         </div>
-      </div>
+      </template>
+
+      <template v-else-if="screen === 'startReturn'">
+        <div class="start-return-content">
+          <p>
+            Returning item {{ selectedCustomer.datasource_id }}, to
+            {{ selectedCustomer.name }} on {{ selectedCustomerCity }}
+          </p>
+          <button class="ok-button" @click="returnItems">OK</button>
+        </div>
+      </template>
     </div>
+  </div>
+  <div v-else class="background-container">
+    <button class="return-items-button" @click="openModal">Return Items</button>
   </div>
 </template>
 
@@ -104,15 +127,10 @@
 export default {
   data() {
     return {
-      datasource_id: "10005_1",
-      name: "Guilherme",
-      name_2: "Narguis",
-      status: "Approved",
-      city: "Brasília",
-      parent_name: "Miss",
-      parent_name_2: "Narguis",
-      customerCount: 56,
+      showModal: true,
+      screen: "returnItems",
       searchQuery: "",
+      selectedCustomer: null,
     };
   },
 
@@ -123,14 +141,40 @@ export default {
     queriedCustomers() {
       return this.$store.getters.queriedCustomers(this.searchQuery);
     },
+    selectedCustomerCity() {
+      if (!this.selectedCustomer) return "";
+      if (
+        this.selectedCustomer.shipping_addresses &&
+        this.selectedCustomer.shipping_addresses.length > 0
+      ) {
+        return this.selectedCustomer.shipping_addresses[0].city;
+      } else if (
+        this.selectedCustomer.store_locations &&
+        this.selectedCustomer.store_locations.length > 0
+      ) {
+        return this.selectedCustomer.store_locations[0].city;
+      }
+      return "";
+    },
   },
 
   methods: {
     handleBack() {
-      alert("Back");
+      this.screen = "backModal";
     },
-    startReturn() {
-      alert("Start return");
+    closeModal() {
+      this.showModal = false;
+    },
+    returnItems() {
+      this.screen = "returnItems";
+    },
+    openModal() {
+      this.showModal = true;
+      this.screen = "returnItems";
+    },
+    startReturn(customer) {
+      this.selectedCustomer = customer;
+      this.screen = "startReturn";
     },
   },
 
@@ -202,6 +246,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transform: 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #f3f2f2;
 }
 
 .header-title {
@@ -239,6 +289,12 @@ export default {
   align-items: center;
   border-radius: 24px;
   flex-shrink: 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-button:hover {
+  filter: brightness(90%);
 }
 
 .results-count {
@@ -377,6 +433,32 @@ export default {
   flex-wrap: nowrap;
   flex-shrink: 0;
   margin-left: 10px;
+  cursor: pointer;
+}
+
+.start-return-button:hover {
+  filter: brightness(90%);
+}
+
+.return-items-button {
+  color: #2a46ff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f3f2f2;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.return-items-button:hover {
+  transform: scale(1.05);
 }
 
 .customer-list {
@@ -390,6 +472,30 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+}
+
+.back-content {
+  height: calc(100vh - 64px);
+  max-width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.start-return-content {
+  height: calc(100vh - 64px);
+  max-width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 540px) {
