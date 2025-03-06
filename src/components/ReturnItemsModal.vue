@@ -27,11 +27,13 @@
 
       <div class="customer-list">
         <div class="customer-row">
-          <div class="initials-square">GN</div>
+          <div class="initials-square">{{ name[0] }}{{ name_2[0] }}</div>
 
           <div class="customer-info">
-            <div class="customer-name">Guilherme Narguis</div>
-            <div class="customer-city">Brasília</div>
+            <div class="customer-name">{{ name }}</div>
+          </div>
+          <div class="location-info">
+            <div class="customer-city">{{ city }}</div>
           </div>
 
           <button class="start-return-btn">Start return</button>
@@ -40,6 +42,33 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      datasource_id: "10005_1",
+      name: "Guilherme",
+      name_2: "Narguis",
+      status: "Approved",
+      city: "Brasília",
+      parent_name: "Miss",
+      parent_name_2: "Narguis",
+      customerCount: 56,
+      searchText: "",
+    };
+  },
+
+  methods: {
+    handleBack() {
+      alert("Back");
+    },
+    startReturn() {
+      alert("Start return");
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .modal-backdrop {
@@ -145,5 +174,47 @@
   background-position: 10px center;
   background-size: 20px auto;
   padding-left: 40px;
+}
+
+.customer-row {
+  display: flex;
+  padding: 12px 16px;
+  justify-content: space-between;
+}
+
+.initials-square {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 700;
+  background: linear-gradient(
+    133.53deg,
+    #00ffa3 2.44%,
+    rgba(0, 194, 255, 0.17) 100%
+  );
+}
+
+.initials-square::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 24px;
+  background-color: #2dc579;
+  background-image: url("../../public/images/checkmark.png");
+  background-repeat: no-repeat;
+  bottom: 0;
+  right: 0;
+  background-position: center;
+  background-size: calc(100% - 4px);
+  padding: 1px;
+  border: 1px solid #ffffff;
 }
 </style>
