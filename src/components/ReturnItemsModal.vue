@@ -110,7 +110,7 @@
       <template v-else-if="screen === 'startReturn'">
         <div class="start-return-content">
           <div>Returning item</div>
-          <img class="giftbox" src="/images/giftbox.svg" alt="" />
+          <img class="truck" src="/images/truck.svg" alt="" />
           <div class="selected-customer-id">
             {{ selectedCustomer.datasource_id }}
           </div>
@@ -541,7 +541,7 @@ export default {
   padding: 0.5rem;
 }
 
-.giftbox {
+.truck {
   max-width: 10rem;
 }
 
