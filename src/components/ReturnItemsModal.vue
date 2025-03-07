@@ -417,6 +417,11 @@ export default {
   font-size: 0.875rem;
   font-weight: 500;
   margin-left: 0.625rem;
+  flex-shrink: 2;
+}
+
+.customer-info {
+  flex-shrink: 1;
 }
 
 .start-return-button {
